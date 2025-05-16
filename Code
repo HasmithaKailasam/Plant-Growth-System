@@ -1,0 +1,39 @@
+#include <LiquidCrystal.h>
+
+// LCD pins: RS, E, D4, D5, D6, D7
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+const int ldrPin = A0;   // LDR connected to analog pin A0
+const int ledPin = 9;    // LED connected to digital pin 9
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  lcd.begin(16, 2);      // Initialize LCD 16x2
+  lcd.print("Plant Monitor");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop() {
+  int lightValue = analogRead(ldrPin); // Read LDR value
+
+  lcd.setCursor(0, 0);
+  lcd.print("Light Level:    ");
+  lcd.setCursor(12, 0);
+  lcd.print(lightValue);
+
+  if (lightValue < 500) 
+  {  // Threshold for low light (adjust if needed)
+    digitalWrite(ledPin, HIGH);  // Turn LED on
+    lcd.setCursor(0, 1);
+    lcd.print("LED ON  GrowLight");
+  } 
+  else
+   {
+    digitalWrite(ledPin, LOW);   // Turn LED off
+    lcd.setCursor(0, 1);
+    lcd.print("LED OFF EnoughLt");
+  }
+  
+  delay(1000);
+}
