@@ -1,0 +1,30 @@
+🌱 Plant Growth Monitoring System
+This project simulates a basic Plant Growth Monitoring System using an LDR (Light Dependent Resistor), LED, 16x2 LCD, and Potentiometer on an Arduino Uno in Tinkercad.
+
+📌 Features
+Measures light intensity using an LDR.
+Displays real-time light levels on an LCD.
+Automatically turns ON an LED if light is below threshold (acts like an artificial grow light).
+Adjustable LCD contrast via potentiometer.
+
+🧰 Components Used
+Arduino Uno
+LDR (Photoresistor)
+10kΩ Resistor (for voltage divider with LDR)
+16x2 LCD Display
+Potentiometer (to control LCD contrast)
+LED (as grow light indicator)
+220Ω Resistor (for LED)
+Breadboard & Jumper Wires
+
+🔌 Circuit Diagram
+Tinkercad link:
+https://www.tinkercad.com/things/guvpoJZWC3y-plantgrowthsystem?sharecode=C1i5u9aLPNePgBuNbTheZs0O4lxOhbMkZIhu7naVz9M
+
+
+📋 Working Principle
+The LDR and 10kΩ resistor form a voltage divider connected to analog pin A0.
+The analog value changes depending on light falling on the LDR.
+If light is below a set threshold (e.g. less than 500), the LED turns ON.
+The LCD displays the light intensity in real time.
+
